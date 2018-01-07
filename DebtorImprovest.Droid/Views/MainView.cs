@@ -31,7 +31,7 @@ namespace DebtorImprovest.Droid.Views
 
             if (bundle == null)
             {
-                ViewModel.ShowFirst.Execute(null);
+                ViewModel.ShowMenu.Execute(null);
                 ViewModel.ShowSecond.Execute(null);
             }
         }
@@ -49,10 +49,11 @@ namespace DebtorImprovest.Droid.Views
 
         public override void OnBackPressed()
         {
-            if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))
-                DrawerLayout.CloseDrawers();
-            else
-                base.OnBackPressed();
+            //if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))
+            //    DrawerLayout.CloseDrawers();
+            //else
+            //    base.OnBackPressed();
+            DrawerLayout.OpenDrawer(GravityCompat.Start);
         }
 
         public void HideSoftKeyboard()
